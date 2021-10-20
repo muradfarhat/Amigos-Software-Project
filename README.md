@@ -32,5 +32,5 @@ Professor: He can add tasks, delete tasks, and modify them, and he can modify ta
 - Noor&Donia:Design Student Page.
 - Dyaa&Lama: Design Assistant Page & Documintation.
 ### SLACK AND TRELLO: ###
-[TRELLO](https://trello.com/amigos_workspace/home)
+[TRELLO](https://trello.com/b/YgbqIvlv/user-story)
 [SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
