@@ -28,7 +28,7 @@ Professor: He can add tasks, delete tasks, and modify them, and he can modify ta
 7. When entering a particular course, the course field is divided into several sections. The first section contains a table with the dates of the course in terms of assignments, exams, etc. The second section contains course slides and course outlines. The third section contains the recorded lectures.
 8. Can student ,TA,professor edit profile.
  ## Tasks:
-- Morad&Ahmed: Design Proff Page.
+- Murad&Ahmed: Design Proff Page.
 - Noor&Donia:Design Student Page.
 - Dyaa&Lama: Design Assistant Page & Documintation.
 ### SLACK AND TRELLO: ###
