@@ -1,7 +1,7 @@
 # Amigos-Software-Project
 Software engineering course project - Amigos Team
 ## Team Members: 
-1. Morad Frehat
+1. Murad Farhat
 2. Noor Shanteer
 3. Ahmed Mohanad
 4. Lama Kharaz
