@@ -1,17 +1,17 @@
 # Amigos-Software-Project
 Software engineering course project - Amigos Team
 ## Team Members: 
-1. Morad Frehat(Scrum master)
-2. Noor Shanteer()
+1. Morad Frehat
+2. Noor Shanteer
 3. Ahmed Mohanad
 4. Lama Kharaz
 5. Donia Shwahneh
 6. Dya'a Dereih
-
+ 
 ### Our Project Name "HAPPY GRADES" ###
   [User Story Summary:](#lines)
  In this project, we will talk about the summary of the user's story, in addition to the existing details.
- Student: The student can edit his profile and see all his courses, and he can see slides, video lectures, and electronic exams, and the student can communicate with students and a professor, and he can see his schedule of tasks.
+ Student: The student can edit his profile and see all his courses, and he can see slides, video lectures, and Online exams, and the student can communicate with students and a professor, and he can see his schedule of tasks.
 
 
 Teaching assistant: so that you fix assignments and modify the student’s mark with permission from the course professor, and add a comment when fixing assignments for a student.
@@ -27,7 +27,10 @@ Professor: He can add tasks, delete tasks, and modify them, and he can modify ta
 6. When adding or modifying the student's grades or adding a note by the teacher, etc., a notification must reach the student and the professor as well.
 7. When entering a particular course, the course field is divided into several sections. The first section contains a table with the dates of the course in terms of assignments, exams, etc. The second section contains course slides and course outlines. The third section contains the recorded lectures.
 8. Can student ,TA,professor edit profile.
-
+ ## Tasks:
+- Morad&Ahmed: Design Proff Page.
+- Noor&Donia:Design Student Page.
+- Dyaa&Lama: Design Assistant Page & Documintation.
 ### SLACK AND TRELLO: ###
 [TRELLO](https://trello.com/amigos_workspace/home)
 [SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
