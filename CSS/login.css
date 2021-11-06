@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* start login container */
+.login-container {
+    width: 75%;
+    height: 500px;
+    margin: auto;
+    border-radius: 15px;
+    opacity: 90%;
+    background-color: #f2f2f2;
+    
+}
+/* end login container */
