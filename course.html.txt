@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+
+<div class="header">
+    <h1> Web programing </h1>
+    <h3>Dr.sufyan abu samra</h3>
+    <p>10636316/3070 </p>
+</div>
+
+<div class="navbar">
+    <a href="#" class="active">Home</a>
+    <a href="#">Slides</a>
+    <a href="#">Video Lectures</a>
+    <a href="#">Homework</a>
+    <a href="#" class="right">Assigment </a>
+</div>
+
+<div class="row">
+    <div class="side">
+        <h2>In General</h2>
+        <!--<h5>Photo of me:</h5>-->
+        <div class="fakeimg" style="height:200px;">Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.
+
+            Responsive Web Design is used in all types of modern web development.
+
+            ECMAScript 5 (JavaScript 5) is supported in all modern browsers. Take a good look at it, especially the new array functions</div>
+
+        <h3>Slides</h3>
+        <h4>chapters </h4>
+        <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">link youtube for ch1</a>  </p>
+        <div class="fakeimg" style="height:60px;"><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter1</a> </div><br>
+        <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">links youtube for ch2</a> </p>
+        <div class="fakeimg" style="height:60px;"><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter2</a></div><br>
+        <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">< linls youtube for ch3</a></p>
+        <div class="fakeimg" style="height:60px;"><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter3</a></div>
+
+        <h3>Video Lectures</h3>
+        <p> <div class="fakeimg" style="height:60px;"><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">open video lecture in this course</a> </div> </p>
+
+
+
+
+    </div>
+
+
