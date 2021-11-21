@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+
+            width: 100%;
+            height: 100vh;
+            background-color: #fafbfc;
+            color: #eee;
+            display: flex;
+            justify-content: right;
+            align-items: flex-start;
+            top:1000px;
+
+        }
+
+
+        .calendar {
+            width: 23rem;
+            height: 19rem;
+
+            background-color: #537e5a;
+            box-shadow: 0 0.5rem 3rem rgba(34, 3, 3, 0.4);
+        }
+
+        .month {
+            width: 100%;
+            height: 5rem;
+            background-color: #021500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            text-align: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+        }
+
+        .month i {
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .month h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .month p {
+            font-size: 1rem;
+        }
+
+        .weekdays {
+            width: 100%;
+            height: 1rem;
+            padding: 0 0.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .weekdays div {
+            font-size: .9rem;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            width: calc(20.2rem / 7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+        }
+
+        .days {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: .1rem;
+        }
+
+        .days div {
+            font-size: 1rem;
+            margin: .5rem;
+            width: calc(13.2rem / 7);
+            height: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+            transition: background-color 0.2s;
+        }
+
+        .days div:hover:not(.today) {
+            background-color: #262626;
+            border: 0.2rem solid #777;
+            cursor: pointer;
+        }
+
+        .prev-date,
+        .next-date {
+            opacity: 0.5;
+        }
+
+        .today {
+            background-color: #090909;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+        <img src="sdd.png" height="60" width="60">
+        <span > <h5> An-Najah National University</h5></span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="#" class="active">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links_name">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Profile</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-list-ul' ></i>
+                <span class="links_name">Courses</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-pie-chart-alt-2' ></i>
+                <span class="links_name">Schedule</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-coin-stack' ></i>
+                <span class="links_name">Mail</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-book-alt' ></i>
+                <span class="links_name">Notifications</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Groups</span>
+            </a>
+        </li>
+
+
+        <li class="log_out">
+            <a href="#">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Dashboard</span>
+        </div>
+
+        <div class="profile-details">
+            <img src="prof1.png" alt="">
+            <span class="student-name">Marah Sami</span>
+            <i class='bx bx-chevron-down' ></i>
+        </div>
+    </nav>
+
+    <div class="Courses">
+        <div class="overview-boxes">
+            <div class="data">
+                <div class="right-side">
+
+                    <div class="number">Mathematics</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Ahmed</span>
+                    </div>
+                </div>
+                <img src="ma.jpeg" width="50" height="50">
+            </div>
+            <div class="data">
+                <div class="right-side">
+
+                    <div class="number">Mathematics</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Ahmed</span>
+                    </div>
+                </div>
+                <img src="ma.jpeg" width="50" height="50">
+            </div>
+            <div class="data">
+                <div class="right-side">
+
+                    <div class="number">Java</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Ashraf</span>
+                    </div>
+                </div>
+                <img src="jj.png" width="50" height="50">
+            </div>
+            <div class="data">
+                <div class="right-side">
+                    <div class="number">Data</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Haya</span>
+                    </div>
+                </div>
+               <img src="data.png"  width="50" height="50">
+            </div>
+
+        </div>
+
+        <div class="Noti">
+            <div class="data ">
+                <div class="title">Notifications</div>
+                <div class="da">
+                    <ul class="details">
+                        <li class="topic">Date</li>
+
+                        <li><a href="#">01 Jan 2021</a></li>
+                        <li><a href="#">05 Jan 2021</a></li>
+                        <li><a href="#">10 Jan 2021</a></li>
+                        <li><a href="#">12 Jan 2021</a></li>
+                        <li><a href="#">01 Jan 2021</a></li>
+                        <li><a href="#">05 Jan 2021</a></li>
+                        <li><a href="#">10 Jan 2021</a></li>
+                        <li><a href="#">12 Jan 2021</a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic"> Course Name</li>
+                        <li><a href="#"> English</a></li>
+                        <li><a href="#"> Math</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Data</a></li>
+                        <li><a href="#"> English</a></li>
+                        <li><a href="#"> Math</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Data</a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Type</li>
+                        <li><a href="#">  Quiz</a></li>
+                        <li><a href="#">Homwork submission</a></li>
+                        <li><a href="#"> Project submission</a></li>
+                        <li><a href="#">Quiz </a></li>
+                        <li><a href="#">  Quiz</a></li>
+                        <li><a href="#">Homwork submission</a></li>
+                        <li><a href="#"> Project submission</a></li>
+                        <li><a href="#">Quiz </a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic"> State</li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="button">
+                    <a href="#">See All</a>
+                </div>
+            </div>
+            <div class="Grops">
+                <div class="title"> Clender </div>
+                <div class="container">
+                    <div class="calendar">
+                        <div class="month">
+                            <i class="fas fa-angle-left prev"></i>
+                            <div class="date">
+                                <h1></h1>
+                                <p></p>
+                            </div>
+                            <i class="fas fa-angle-right next"></i>
+                        </div>
+                        <div class="weekdays">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="days"></div>
+                    </div>
+                </div>
+
+                <script src="script.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</section>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+        sidebar.classList.toggle("active");
+        if(sidebar.classList.contains("active")){
+            sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+        }else
+            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+</script>
+
+</body>
+</html>
+
