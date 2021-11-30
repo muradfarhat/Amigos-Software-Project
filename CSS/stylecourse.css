@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -7,6 +6,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 /* Header/logo Title */
@@ -70,12 +70,33 @@ body {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
+    -ms-flex: 28%; /* IE10 */
+    flex: 28%;
     background-color: #f1f1f1;
     padding: 20px;
+    margin-left: 2%;
 }
-
+.chapter button {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.chapter button:hover {
+    color: rgb(67, 128, 75);
+}
+.chapter a {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+.chapter a:hover {
+    color: rgb(67, 128, 75);
+}
 /* Main column */
 .main {
     -ms-flex: 70%; /* IE10 */
