@@ -124,6 +124,10 @@ nav .sidebar-button i{
     height: 50px;
     min-width: 190px;
     padding: 0 15px 0 2px;
+    text-decoration: none;
+}
+.home-section nav .profile-details:hover {
+    cursor: pointer;
 }
 nav .profile-details img{
     height: 40px;
