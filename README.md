@@ -7,9 +7,32 @@ Software engineering course project - Amigos Team
 4. Lama Kharaz
 5. Donia Shwahneh
 6. Dya'a Dereih
- 
+## Introduction
+### Purpose
+This document,was created for the Programming Requirements document for a University Management System for E-Learning, It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate. This document is intended for both the stakeholders and the developers of the system.
+### Stakeholders:
+- Proffesor(Teacher)
+- Teacher Asisstant
+- Student
+
+### Overview 
+The next section covers the Overall Description section which gives an overview of the functionality of the product and its perspective, it identifies the various user classes and their characteristics, and Assumptions and Dependencies
+# Overall Description
+### Product Perspective
+A happy Grades system is a system that manages University activities, and a database system stored information of Students, Proffesors,and TA's.
+### Product Functions
+Proffesor:
+- Log in: Proffesor must log in to use the system.
+- Log out: Proffesor can log out.
+- Proffesor can Edit hos profile.
+- gives permission to the teaching assistant to enter the course.
+- adjust the students’ mark by history.
+- The professor has more than one assistant.
+- modifying the student's grades.
+#### Teacher Assistant:
+
 ### Our Project Name "HAPPY GRADES" ###
-  [User Story Summary:](#lines)
+  User Story Summary:
  In this project, we will talk about the summary of the user's story, in addition to the existing details.
  Student: The student can edit his profile and see all his courses, and he can see slides, video lectures, and Online exams, and the student can communicate with students and a professor, and he can see his schedule of tasks.
 
@@ -32,5 +55,5 @@ Professor: He can add tasks, delete tasks, and modify them, and he can modify ta
 - Noor&Donia:Design Student Page.
 - Dyaa&Lama: Design Assistant Page & Documintation.
 ### SLACK AND TRELLO: ###
-[TRELLO](https://trello.com/b/YgbqIvlv/user-story)
-[SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
+*[TRELLO](https://trello.com/b/YgbqIvlv/user-story)
+*[SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
