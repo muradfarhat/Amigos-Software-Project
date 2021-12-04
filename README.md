@@ -73,6 +73,14 @@ has a baccalauriose degree or higher.
 - The main user application will be built as a web-based system. Users will access it through a browser and login window. 
 - The session application will on laptops with Windows, mobile phone, mac os, Linux.
 
+### Sprints achievements:
+At The beginning after discussion between us and the customer about the user stories, sprints time, and requirments of the project(fuctional & non functional)
+we done the first sprint.
+After that We agreed on a preliminary design for GUI(in 2nd sprint).
+Then we finished the whole FrontEnd for the system in the 3rd sprint.
+finally, we finished the whole BackEnd and get the final prduct.
+
+
 ### SLACK AND TRELLO: ###
 - [TRELLO](https://trello.com/b/YgbqIvlv/user-story)
 - [SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
