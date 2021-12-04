@@ -27,24 +27,40 @@ A happy Grades system is a system that manages University activities, and a data
 1. Log in: Proffesor must log in to use the system.
 2. Log out: Proffesor can log out.
 3. Proffesor can Edit his profile.
-4. gives permission to the teaching assistant to enter the course.
-5. adjust the students’ mark by history.
+4. Gives permission to the teaching assistant to enter the course.
+5. Adjust the students’ mark by history.
 6. The professor has more than one assistant.
-7. modifying the student's grades.
+7. Modifying the student's grades.
+8. Modifying the assignments to students.
+9. Editing course page (Adding slides,assignments or advtisments).
+10. Chating with the student in any course goup.
+11. Add courses.
+12. Remove courses.
+13. Assign Assistant.
+14. Send & Receive emails on the system.
+
 - Teacher Assistant:
 1. give grades to assignments.
 2. can Edit his profile.
-3. make notes on assignments.
+3. leave feedback on assignments.
 4. Log in: TA must log in to use the system.
 5. Log out: TA can log out.
+6. chating with the student and the Teacher in any course goup.
+7. can Edit the assignments grades.
+8. Send & Receive emails on the system.
+
 - Student:
 1. Log in: Student must log in to use the system.
 2. Log out: Student can log out.
 3. Student can Edit his profile.
 4. Student can upload Files as A Assignment solution.
 5. See his courses and any thing related to it.
-6. See his schedul.
-7. Git notification reach when adding or modifying the student's grades or adding a note by the teacher.
+6. See his schedul Files.
+7. Get notification reach when adding or modifying the student's grades or adding a note by the teacher.
+8. 6. chating with the student and the Teacher in any course goup.
+9. Student can delete .
+10. Send & Receive emails on the system.
+
 ### User Classes and Characteristics
 The system will be used in the HAPPY GRADES by Student, Proffesors, and TA's will be the main users. It is also designed to be easy to use.
 - Proffesor:
