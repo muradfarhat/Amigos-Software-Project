@@ -1,43 +1,117 @@
+<?php
+//index.php
+
+
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title> Calendar</title>
+    <title> Calender</title>
+    <link rel="stylesheet" href="cc.css" />
+    <link rel="stylesheet" href="jj.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        $(document).ready(function() {
+            var calendar = $('#calendar').fullCalendar({
+                editable:true,
+                header:{
+                    left:'prev,next today',
+                    center:'title',
+                    right:'month,agendaWeek,agendaDay'
+                },
+                events: 'load.php',
+                selectable:true,
+                selectHelper:true,
+                select: function(start, end, allDay)
+                {
+                    var title = prompt("Enter Event Title");
+                    if(title)
+                    {
+                        var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                        var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                        $.ajax({
+                            url:"insert.php",
+                            type:"POST",
+                            data:{title:title, start:start, end:end},
+                            success:function()
+                            {
+                                calendar.fullCalendar('refetchEvents');
+                                alert("Added Successfully");
+                            }
+                        })
+                    }
+                },
+                editable:true,
+                eventResize:function(event)
+                {
+                    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                    var title = event.title;
+                    var id = event.id;
+                    $.ajax({
+                        url:"update.php",
+                        type:"POST",
+                        data:{title:title, start:start, end:end, id:id},
+                        success:function(){
+                            calendar.fullCalendar('refetchEvents');
+                            alert('Event Update');
+                        }
+                    })
+                },
 
-    <link rel="icon" href="favicon.png">
+                eventDrop:function(event)
+                {
+                    var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                    var title = event.title;
+                    var id = event.id;
+                    $.ajax({
+                        url:"update.php",
+                        type:"POST",
+                        data:{title:title, start:start, end:end, id:id},
+                        success:function()
+                        {
+                            calendar.fullCalendar('refetchEvents');
+                            alert("Event Updated");
+                        }
+                    });
+                },
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="CSS/evo-calendar.min.css">
+                eventClick:function(event)
+                {
+                    if(confirm("Are you sure you want to remove it?"))
+                    {
+                        var id = event.id;
+                        $.ajax({
+                            url:"delete.php",
+                            type:"POST",
+                            data:{id:id},
+                            success:function()
+                            {
+                                calendar.fullCalendar('refetchEvents');
+                                alert("Event Removed");
+                            }
+                        })
+                    }
+                },
 
-    <link rel="stylesheet" href="CSS/evo-calendar.css">
+            });
+        });
 
-    <link rel="stylesheet" href="CSS/demo.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+    </script>
 </head>
 <body>
- <main>
-        <div class="main-container">
-     <section id="demos">
-                <div class="section-content">
-                    <p class="section-title --shrt">Your Calender</p>
-                    <div class="console-log">
-                        <div class="log-content">
-                            <div class="--noshadow" id="demoEvoCalendar"></div>
-                        </div>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="btn-action" id="addBtn">ADD EVENT</button>
-                        <button class="btn-action" id="removeBtn" disabled>REMOVE EVENT</button>
-                    </div>
-                </div>
-            </section>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <script src="JS/evo-calendar.min.js"></script>
-    <script src="JS/demo.js"></script>
+<br />
+<h2 align="center"><a href="dashboard.php" style="right: 50px ; color: #2BD47D"> Home</a></h2>
+<br />
+<div class="container">
+    <div id="calendar"></div>
+</div>
 </body>
 </html>
