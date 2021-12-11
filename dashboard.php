@@ -102,7 +102,7 @@
         }
 
         .days div:hover:not(.today) {
-            background-color: #262626;
+            background-color: red;
             border: 0.2rem solid #777;
             cursor: pointer;
         }
@@ -118,6 +118,40 @@
     </style>
 </head>
 <body>
+
+<?php
+
+    $f = fopen("file.txt", "r");
+    $dd = fgets($f);
+    fclose($f);
+    if(isset($_REQUEST['su1'])){
+        $conn = new mysqli("localhost", "root", "", "portal");
+        $id = $_REQUEST['id'];
+        $pass = $_REQUEST['password'];
+
+        $sql = "select * from student where id = $id and password='$pass'";
+        $res = $conn->query($sql);
+        if($res->num_rows == 0){
+            alerts('email or password is not correct');
+            header('Location: sign_in.php');
+        }
+        else{
+            if($row = $res->fetch_assoc()){
+                $file = fopen("file.txt", "w");
+                fputs($file, "$id");
+                fclose($file);
+                $id = $row['id'];
+                $fname = $row['fname'];
+                $lname = $row['lname'];
+                $pass = $row['password'];
+                $major = $row['major'];
+                $city = $row['city'];
+                $code = $row['postcode'];
+                $email = $row['email'];
+                $phone = $row['phone'];
+                $address = $row['address'];
+?>    
+    
 <div class="sidebar">
     <div class="logo-details">
         <img src="Images/sdd.png" height="50" width="50" style="margin: 5px;">
@@ -137,7 +171,7 @@
             </a>
         </li>
         <li>
-            <a href="index.html">
+            <a href="#">
                 <i class='bx bx-pie-chart-alt-2' ></i>
                 <span class="links_name">Schedule</span>
             </a>
@@ -157,7 +191,7 @@
 
 
         <li class="log_out">
-            <a href="#">
+            <a href="sign_in.php">
                 <i class='bx bx-log-out'></i>
                 <span class="links_name">Log out</span>
             </a>
@@ -171,9 +205,9 @@
             <span class="dashboard">Dashboard</span>
         </div>
 
-        <a class="profile-details" href="profileMin.html">
+        <a class="profile-details" href="profileMin.php">
             <img src="Images/prof1.png" alt="">
-            <span class="student-name">Marah Sami</span>
+            <span class="student-name"><?php echo $fname . " " . $lname?></span>
             <i class='bx bx-chevron-down' ></i>
         </a>
     </nav>
@@ -314,7 +348,6 @@
             </div>
         </div>
     </div>
-
     
 </section>
 
@@ -331,6 +364,227 @@
     }
 </script>
 
+<?php  
+         
+            }
+        }
+    }
+    else
+    if($dd != ""){  
+        $conn = new mysqli("localhost", "root", "", "portal");
+        $sql = "select * from student where id = $dd";
+        $res = $conn->query($sql);
+        $fname = "";
+        $lname = "";
+        if($r = $res->fetch_assoc()){
+            $fname = $r['fname'];
+            $lname = $r['lname'];
+        }
+?>
+
+<div class="sidebar">
+    <div class="logo-details">
+        <img src="Images/sdd.png" height="50" width="50" style="margin: 5px;">
+        <span style="margin-left: 5px; color: white;"> <h5> An-Najah National University</h5></span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="#" class="active">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links_name">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="profileMin.html">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Profile</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-pie-chart-alt-2' ></i>
+                <span class="links_name">Schedule</span>
+            </a>
+        </li>
+        <li>
+            <a href="mail.html">
+                <i class='bx bx-coin-stack' ></i>
+                <span class="links_name">Mail</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Groups</span>
+            </a>
+        </li>
+
+
+        <li class="log_out">
+            <a href="sign_in.php">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Dashboard</span>
+        </div>
+
+        <a class="profile-details" href="profileMin.php">
+            <img src="Images/prof1.png" alt="">
+            <span class="student-name"><?php echo $fname . " " . $lname?></span>
+            <i class='bx bx-chevron-down' ></i>
+        </a>
+    </nav>
+
+    <div class="Courses">
+        <div class="overview-boxes">
+            <a class="data" href="course.html" style="text-decoration: none; color: black;">
+                <div class="right-side">
+
+                    <div class="number">Web Programing</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.sufyan Abu Samra</span>
+                    </div>
+                </div>
+                <img src="Images/web.png" width="50" height="50">
+            </a>
+            <a class="data" href="course.html" style="text-decoration: none; color: black;">
+                <div class="right-side">
+
+                    <div class="number">Mathematics</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Ahmed</span>
+                    </div>
+                </div>
+                <img src="Images/ma.jpeg" width="50" height="50">
+            </a>
+            <a class="data" href="course.html" style="text-decoration: none; color: black;">
+                <div class="right-side">
+
+                    <div class="number">Java</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Ashraf</span>
+                    </div>
+                </div>
+                <img src="Images/javaphoto.png" width="50" height="50">
+            </a>
+            <a class="data" href="course.html" style="text-decoration: none; color: black;">
+                <div class="right-side">
+                    <div class="number">Data</div>
+                    <div class="indicator">
+
+                        <span class="text">Dr.Haya</span>
+                    </div>
+                </div>
+               <img src="Images/data.png"  width="50" height="50">
+            </a>
+
+        </div>
+
+        <div class="Noti">
+            <div class="data ">
+                <div class="title">Notifications</div>
+                <div class="da">
+                    <ul class="details">
+                        <li class="topic">Date</li>
+
+                        <li><a href="#">01 Jan 2021</a></li>
+                        <li><a href="#">05 Jan 2021</a></li>
+                        <li><a href="#">10 Jan 2021</a></li>
+                        <li><a href="#">12 Jan 2021</a></li>
+                        <li><a href="#">01 Jan 2021</a></li>
+                        <li><a href="#">05 Jan 2021</a></li>
+                        <li><a href="#">10 Jan 2021</a></li>
+                        <li><a href="#">12 Jan 2021</a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic"> Course Name</li>
+                        <li><a href="#"> English</a></li>
+                        <li><a href="#"> Math</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Data</a></li>
+                        <li><a href="#"> English</a></li>
+                        <li><a href="#"> Math</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Data</a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Type</li>
+                        <li><a href="#">  Quiz</a></li>
+                        <li><a href="#">Homwork submission</a></li>
+                        <li><a href="#"> Project submission</a></li>
+                        <li><a href="#">Quiz </a></li>
+                        <li><a href="#">  Quiz</a></li>
+                        <li><a href="#">Homwork submission</a></li>
+                        <li><a href="#"> Project submission</a></li>
+                        <li><a href="#">Quiz </a></li>
+
+                    </ul>
+                    <ul class="details">
+                        <li class="topic"> State</li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+                        <li><a href="#">Complete</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="button">
+                    <a href="#">See All</a>
+                </div>
+            </div>
+            <div class="Grops">
+                <!-- <div class="title"> Clender </div> -->
+                <div class="container">
+                    <div class="calendar">
+                        <div class="month">
+                            <i class="fas fa-angle-left prev"></i>
+                            <div class="date">
+                                <h1></h1>
+                                <p></p>
+                            </div>
+                            <i class="fas fa-angle-right next"></i>
+                        </div>
+                        <div class="weekdays">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="days"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<?php
+
+    }
+?>
+
 </body>
 </html>
-
