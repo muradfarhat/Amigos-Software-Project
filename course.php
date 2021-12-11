@@ -1,3 +1,25 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "happy_grades";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT slides FROM web";
+$result = $conn->query($sql);
+
+$sql2 = "SELECT video FROM web";
+$result2 = $conn->query($sql2);
+
+$sql3 = "SELECT assignments, file, d_line FROM web_assignment";
+$result3 = $conn->query($sql3);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,12 +70,15 @@
             ECMAScript 5 (JavaScript 5) is supported in all modern browsers. Take a good look at it, especially the new array functions</div>
 
         <h3 id ="foo1">Slides</h3>
-        <!-- <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">link youtube for ch1</a>  </p> -->
-        <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-file-pdf-o" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter1</a> </div><br>
-        <!-- <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">links youtube for ch2</a> </p> -->
-        <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-file-pdf-o" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter2</a></div><br>
-        <!-- <p><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">< linls youtube for ch3</a></p> -->
-        <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-file-pdf-o" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">chapter3</a></div>
+        <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                ?>
+                <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-file-pdf-o" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg"><?php echo $row['slides']; ?></a> </div><br>
+                <?php
+            }
+        }
+        ?>
 
         
     </div>
@@ -62,43 +87,53 @@
 
     <div class="main">
         <h2 id ="foo3">Video Lectures</h2>
-        <p> <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-youtube-play" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg">open video lecture in this course</a> </div> </p>
+        <?php
+        if ($result2->num_rows > 0) {
+            while($row = $result2->fetch_assoc()) {
+                ?>
+                <p> <div class="fakeimg chapter" style="height:60px;background-color: rgb(224, 224, 224);"><i class="fa fa-youtube-play" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><a href="https://www.youtube.com/watch?v=1-UV_ufeprg"><?php echo $row['video'] ?></a> </div> </p>
 
+                <?php
+            }
+        }
+        ?>
 
-
-    
-
-        <br>
         <h2 id ="foo4">Assigments</h2>
         <h5></h5>
 
 
+
         <div class="center">
+            <?php
+            if ($result3->num_rows > 0) {
+            while($row = $result3->fetch_assoc()) {
+            ?>
             <input type="checkbox" id="show">
-            <label for="show" class="fakeimg chapter" style="margin-bottom: 20px;background-color: rgb(224, 224, 224);"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i>Assigment Part 1</label>
+            <label for="show" class="fakeimg chapter" style="margin-bottom: 20px;background-color: rgb(224, 224, 224);"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><?php echo $row['assignments']; ?></label>
             <div class="container">
+
                 <label for="show" class="close-btn fa fa-times"></label>
-                <div class="text">Assignment Part 1</div>
+                <div class="text"><?php echo $row['assignments']; ?></div>
                 <form action="#" style="margin-top: 50px;">
                     <div class="data">
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">File : </span>
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;">Assignment_1_hw.pdf</span>
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['file']; ?></span>
                         <hr>
                     </div>
                     <div class="data">
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold; width: 150px;">Deadline : </span>
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;">12 / Dec / 2021</span>
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['d_line']; ?></span>
                         <hr>
                     </div>
                     <div class="data">
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">Uploded file : </span>
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;">Assignment1.pdf</span>
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;">--</span>
                         <hr>
                     </div>
                     <div class="btn" style="margin-left: 160px;">
@@ -112,10 +147,11 @@
                 </form>
             </div>
         </div>
-
-        <!-- <div class="fakeimg chapter" style="margin-bottom: 20px;background-color: rgb(224, 224, 224);" onclick="AssignmentOnClick()"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><button>Assigment Part 1</button></div>
-        <div class="fakeimg chapter" style="margin-bottom: 20px;background-color: rgb(224, 224, 224);" onclick="AssignmentOnClick()"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><button>Assigment Part 2</button></div> -->
-    </div>
+    <?php
+    }
+    }
+    ?>
+         </div>
 </div>
 
 

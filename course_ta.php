@@ -35,7 +35,7 @@ $result3 = $conn->query($sql3);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="CSS/stylecourse.css">
 
 
@@ -80,10 +80,7 @@ $result3 = $conn->query($sql3);
         }
         ?>
 
-        <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-        <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Slide</button>
-        <span></span>
-
+        
     </div>
 
 
@@ -100,10 +97,6 @@ $result3 = $conn->query($sql3);
             }
         }
         ?>
-
-        <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-        <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Video</button>
-        <span></span>
 
         <h2 id ="foo4">Assigments</h2>
         <h5></h5>
@@ -153,15 +146,12 @@ $result3 = $conn->query($sql3);
                     </div>
                 </form>
             </div>
+        </div>
     <?php
     }
     }
     ?>
-            <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-            <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Assignment</button>
-            <span></span>
-        </div>
-    </div>
+         </div>
 </div>
 
 
@@ -187,11 +177,11 @@ $result3 = $conn->query($sql3);
         </form>
     </div>
 </div> -->
+ 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="JS/course.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="JS/course.js"></script>
 </body>
 </html>

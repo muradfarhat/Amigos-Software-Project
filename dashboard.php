@@ -125,7 +125,7 @@
     $dd = fgets($f);
     fclose($f);
     if(isset($_REQUEST['su1'])){
-        $conn = new mysqli("localhost", "root", "", "portal");
+        $conn = new mysqli("localhost", "root", "", "happy_grades");
         $id = $_REQUEST['id'];
         $pass = $_REQUEST['password'];
 
@@ -371,7 +371,7 @@
     }
     else
     if($dd != ""){  
-        $conn = new mysqli("localhost", "root", "", "portal");
+        $conn = new mysqli("localhost", "root", "", "happy_grades");
         $sql = "select * from student where id = $dd";
         $res = $conn->query($sql);
         $fname = "";
