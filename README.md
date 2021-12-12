@@ -86,3 +86,5 @@ finally, we finished the whole BackEnd and get the final prduct.
 - [SLACK](https://amigosteamworkspace.slack.com/archives/C02H9HTR6GJ)
  # Scrum Meeting Evedance
 ![meeting !](https://github.com/muradfarhat/Amigos-Software-Project/blob/main/Meetings_info/m_pic1.png)
+ # UML Diagram
+![UML !](https://github.com/muradfarhat/Amigos-Software-Project/blob/main/Images/UML.jpg)
