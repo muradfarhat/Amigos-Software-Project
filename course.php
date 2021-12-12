@@ -14,10 +14,17 @@ if ($conn->connect_error) {
 $sql = "SELECT slides FROM web";
 $result = $conn->query($sql);
 
+<<<<<<< HEAD
+$sql2 = "SELECT video FROM web_video";
+$result2 = $conn->query($sql2);
+
+$sql3 = "SELECT assignments, d_line,weight,grade FROM web_assignment";
+=======
 $sql2 = "SELECT video FROM web";
 $result2 = $conn->query($sql2);
 
 $sql3 = "SELECT assignments, file, d_line FROM web_assignment";
+>>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 $result3 = $conn->query($sql3);
 ?>
 <!DOCTYPE html>
@@ -119,7 +126,25 @@ $result3 = $conn->query($sql3);
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">File : </span>
+<<<<<<< HEAD
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['assignments']; ?></span>
+                        <hr>
+                    </div>
+                    <div class="data">
+                        <!-- <label>Email</label>
+                        <input type="text" placeholder="Email" required> -->
+                        <span style="font-size: 16px;font-weight: bold;width: 150px;">Weight : </span>
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['weight']; ?></span>
+                        <hr>
+                    </div>
+                    <div class="data">
+                        <!-- <label>Email</label>
+                        <input type="text" placeholder="Email" required> -->
+                        <span style="font-size: 16px;font-weight: bold;width: 150px;">Grade : </span>
+                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo "-" ?></span>
+=======
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['file']; ?></span>
+>>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
                         <hr>
                     </div>
                     <div class="data">
@@ -155,28 +180,6 @@ $result3 = $conn->query($sql3);
 </div>
 
 
-<!-- <div class="center">
-    <input type="checkbox" id="show">
-    <label for="show" class="show-btn">View Form</label>
-    <div class="container">
-        <label for="show" class="close-btn fa fa-times"></label>
-        <div class="text">Assignment Part 1</div>
-        <form action="#">
-            <div class="data">
-                <label>Email</label>
-                <input type="text" placeholder="Email" required>
-            </div>
-            <div class="data">
-                <label>Password</label>
-                <input type="text" placeholder="Password" required>
-            </div>
-            <div class="btn">
-                <div class="inner"></div>
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
-</div> -->
  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

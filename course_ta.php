@@ -11,6 +11,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+<<<<<<< HEAD
+$sql4 = "SELECT student, hw,grade FROM web_student";
+$result4 = $conn->query($sql4);
+=======
 $sql = "SELECT slides FROM web";
 $result = $conn->query($sql);
 
@@ -19,6 +23,7 @@ $result2 = $conn->query($sql2);
 
 $sql3 = "SELECT assignments, file, d_line FROM web_assignment";
 $result3 = $conn->query($sql3);
+>>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +66,28 @@ $result3 = $conn->query($sql3);
 
 <div class="row">
     <div class="side">
+<<<<<<< HEAD
+        <form action="course_ta.php" method="post">
+            <table style="border: 3px solid #0c4128;width: 100%">
+                <?php
+                if ($result4->num_rows > 0) {
+                    while($row = $result4->fetch_assoc()) {
+                        ?>
+                        <tr style="border: 3px solid #0c4128">
+                            <td style="padding: 20px;margin-right: 20px"><?php echo $row['student']; ?></td>
+                            <td style="padding: 20px;margin-right: 20px"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i> <?php echo $row['hw']; ?></td>
+                            <td style="padding: 20px;"><input type="text" placeholder="Grade" name="grade"></td>
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
+            </table>
+            <button style="padding: 10px 30px; color: white;background-color: #0c4128;border-radius: 15px;margin-top: 10px">Submit</button>
+        </form>
+    </div>
+
+=======
         <h2>In General</h2>
         <!--<h5>Photo of me:</h5>-->
         <div class="fakeimg" style="height:200px; color: black; font-weight: bold; background-color: rgb(224, 224, 224);">Every Web Developer must have a basic understanding of HTML, CSS, and JavaScript.
@@ -177,6 +204,7 @@ $result3 = $conn->query($sql3);
         </form>
     </div>
 </div> -->
+>>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
