@@ -14,17 +14,10 @@ if ($conn->connect_error) {
 $sql = "SELECT slides FROM web";
 $result = $conn->query($sql);
 
-<<<<<<< HEAD
 $sql2 = "SELECT video FROM web_video";
 $result2 = $conn->query($sql2);
 
 $sql3 = "SELECT assignments, d_line,weight,grade FROM web_assignment";
-=======
-$sql2 = "SELECT video FROM web";
-$result2 = $conn->query($sql2);
-
-$sql3 = "SELECT assignments, file, d_line FROM web_assignment";
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 $result3 = $conn->query($sql3);
 ?>
 <!DOCTYPE html>
@@ -105,6 +98,7 @@ $result3 = $conn->query($sql3);
         }
         ?>
 
+        <hr>
         <h2 id ="foo4">Assigments</h2>
         <h5></h5>
 
@@ -113,8 +107,8 @@ $result3 = $conn->query($sql3);
         <div class="center">
             <?php
             if ($result3->num_rows > 0) {
-            while($row = $result3->fetch_assoc()) {
-            ?>
+                while($row = $result3->fetch_assoc()) {
+                    ?>
             <input type="checkbox" id="show">
             <label for="show" class="fakeimg chapter" style="margin-bottom: 20px;background-color: rgb(224, 224, 224);"><i class="fa fa-tasks" style="font-size:20px;color:rgb(67, 128, 75);margin-right: 5px;"></i><?php echo $row['assignments']; ?></label>
             <div class="container">
@@ -126,7 +120,7 @@ $result3 = $conn->query($sql3);
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">File : </span>
-<<<<<<< HEAD
+
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['assignments']; ?></span>
                         <hr>
                     </div>
@@ -142,9 +136,8 @@ $result3 = $conn->query($sql3);
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">Grade : </span>
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo "-" ?></span>
-=======
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['file']; ?></span>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
+
                         <hr>
                     </div>
                     <div class="data">
@@ -171,11 +164,12 @@ $result3 = $conn->query($sql3);
                     </div>
                 </form>
             </div>
-        </div>
-    <?php
-    }
-    }
-    ?>
+
+                    <?php
+                }
+            }
+            ?>
+
          </div>
 </div>
 

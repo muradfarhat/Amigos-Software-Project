@@ -5,7 +5,6 @@ $username = "root";
 $password = "";
 $dbname = "happy_grades";
 
-<<<<<<< HEAD
 $slide = '';
 $video = '';
 $hw = '';
@@ -13,14 +12,12 @@ $weight = '';
 $grade = '';
 $date = '';
 
-=======
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-<<<<<<< HEAD
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['slideContent']) && $_POST['slideContent'] != '') {
         $slide = $_POST['slideContent'];
@@ -41,13 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $result = $conn->query($str2);
     }
 }
-=======
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 
 $sql = "SELECT slides FROM web";
 $result = $conn->query($sql);
 
-<<<<<<< HEAD
 $sql2 = "SELECT video FROM web_video";
 $result2 = $conn->query($sql2);
 
@@ -56,13 +50,7 @@ $result3 = $conn->query($sql3);
 
 $sql4 = "SELECT student, hw,grade FROM web_student";
 $result4 = $conn->query($sql4);
-=======
-$sql2 = "SELECT video FROM web";
-$result2 = $conn->query($sql2);
 
-$sql3 = "SELECT assignments, file, d_line FROM web_assignment";
-$result3 = $conn->query($sql3);
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,17 +112,15 @@ $result3 = $conn->query($sql3);
         }
         ?>
 
-<<<<<<< HEAD
+
         <form action="Prof_course.php" method="post">
             <input type="file" style="padding: 10px; color: black;" name="slideContent">
             <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Slide</button>
             <span></span>
         </form>
-=======
-        <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-        <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Slide</button>
-        <span></span>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
+
+
 
     </div>
 
@@ -153,7 +139,7 @@ $result3 = $conn->query($sql3);
         }
         ?>
 
-<<<<<<< HEAD
+
         <form action="Prof_course.php" method="post">
             <input type="file" style="padding: 10px; color: black;" name="videoFile">
             <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Video</button>
@@ -162,12 +148,10 @@ $result3 = $conn->query($sql3);
 
         <hr>
 
-=======
-        <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-        <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Video</button>
-        <span></span>
 
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
+
+
         <h2 id ="foo4">Assigments</h2>
         <h5></h5>
 
@@ -189,29 +173,24 @@ $result3 = $conn->query($sql3);
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">File : </span>
-<<<<<<< HEAD
+
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['assignments']; ?></span>
-=======
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['file']; ?></span>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
                         <hr>
                     </div>
                     <div class="data">
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
-<<<<<<< HEAD
+
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">Grade : </span>
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['grade']; ?></span>
-=======
-                        <span style="font-size: 16px;font-weight: bold; width: 150px;">Deadline : </span>
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['d_line']; ?></span>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
+
                         <hr>
                     </div>
                     <div class="data">
                         <!-- <label>Email</label>
                         <input type="text" placeholder="Email" required> -->
-<<<<<<< HEAD
+
                         <span style="font-size: 16px;font-weight: bold;width: 150px;">weight : </span>
                         <span style="font-size: 16px;font-weight: bold;margin-left: 50px;"><?php echo $row['weight']; ?></span>
                         <hr>
@@ -224,27 +203,14 @@ $result3 = $conn->query($sql3);
                         <hr>
                     </div>
 
-=======
-                        <span style="font-size: 16px;font-weight: bold;width: 150px;">Uploded file : </span>
-                        <span style="font-size: 16px;font-weight: bold;margin-left: 50px;">--</span>
-                        <hr>
-                    </div>
-                    <div class="btn" style="margin-left: 160px;">
-                        <div class="inner"></div>
-                        <button type="submit">Edit</button>
-                    </div>
-                    <div class="btn" style="margin-left: 50px;">
-                        <div class="inner"></div>
-                        <button type="submit">Upload</button>
-                    </div>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
                 </form>
             </div>
     <?php
     }
     }
     ?>
-<<<<<<< HEAD
+
             <form action="Prof_course.php" method="post">
                 <input style="margin-bottom: 5px; padding: 5px;" type="text" placeholder="Assignment Weight" name="weight"><br>
                 <input style="margin-bottom: 5px; padding: 5px;" type="text" placeholder="Assignment Grade" name="grade"><br>
@@ -253,11 +219,7 @@ $result3 = $conn->query($sql3);
                 <button style="padding: 10px; color: white; background-color: #0c4128">Add Assignment</button>
                 <span></span>
             </form>
-=======
-            <input type="file" style="padding: 10px; color: white; background-color: #0c4128">
-            <button onclick="addSlide()" style="padding: 10px; color: white; background-color: #0c4128">Add Assignment</button>
-            <span></span>
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
+
         </div>
     </div>
 </div>
@@ -286,7 +248,7 @@ $result3 = $conn->query($sql3);
     </div>
 </div> -->
 
-<<<<<<< HEAD
+
 <div class="row">
     <div class="side">
         <form action="course_ta.php" method="post">
@@ -308,9 +270,7 @@ $result3 = $conn->query($sql3);
             <button style="padding: 10px 30px; color: white;background-color: #0c4128;border-radius: 15px;margin-top: 10px">Submit</button>
         </form>
     </div>
-=======
 
->>>>>>> e2d8fee37abde8d29500e1ef8d4d528c8b002b5a
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
